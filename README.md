@@ -1,6 +1,23 @@
 # SmartAttend
 
-Attendance by a QR code that expires in 60 seconds, with checks that stop a friend marking you present.
+> Attendance by a QR code that expires in 60 seconds, with checks that stop a friend marking you present.
+
+![Node](https://img.shields.io/badge/Node-24%2B-339933?logo=node.js&logoColor=white)
+![React](https://img.shields.io/badge/React-Vite-61DAFB?logo=react&logoColor=black)
+![Python](https://img.shields.io/badge/Python-3.13-3776AB?logo=python&logoColor=white)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-FastAPI-F7931E?logo=scikit-learn&logoColor=white)
+![Tests](https://img.shields.io/badge/tests-119%20server%20%7C%2020%20web%20%7C%2032%20ml%20%7C%2012%20e2e-brightgreen)
+
+*Forked from [bhoopesh282008/SmartAttend](https://github.com/bhoopesh282008/SmartAttend).*
+
+## Highlights
+
+- **60-second QR codes**: HMAC-signed, judged on the server's clock, auto-renewing, with a six-digit fallback when no camera works.
+- **Proxy-marking defences**: device ID reuse, GPS distance against the real building outline (OpenStreetMap), and an optional on-device face check with a head-turn prompt.
+- **Explainable AI layer**: a logistic-regression risk model that reviews doubtful scans and shows faculty the reasons; it never rejects a scan by itself.
+- **At-risk predictor**: flags students likely to finish below 75% attendance, with plain-arithmetic "classes you can still miss".
+- **Faculty tools**: live attendance list, class register, review queue, CSV export (Excel-safe, formula-injection-safe).
+- **Honest about its limits**: demo data is synthetic and the app says so; known weaknesses are listed below.
 
 Built for Problem Statement 1 (*Smart Attendance via QR*): faculty generate a QR code per lecture that expires in 60 seconds; students scan it to mark attendance. **Everything shown is demo data**: the class, names, roll numbers, past lectures and the data the models were trained on are all invented, and the interface says so.
 
